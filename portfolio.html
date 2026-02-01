@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourav Choudhary | SAP BTP Consultant & Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a',
+                        secondary: '#1e293b',
+                        accent: '#3b82f6',
+                        accentHover: '#2563eb',
+                        gold: '#fbbf24',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'bounce-slow': 'bounce 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.3);
+        }
+        .profile-image {
+            border: 4px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 40px -5px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-primary text-gray-100 font-sans antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-primary/80 backdrop-blur-md border-b border-gray-800 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold gradient-text">SC.</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#skills" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Skills</a>
+                        <a href="#experience" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Experience</a>
+                        <a href="#projects" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Projects</a>
+                        <a href="#contact" class="bg-accent hover:bg-accentHover text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary border-b border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#skills" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#experience" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Experience</a>
+                <a href="#contact" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary opacity-90"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%233b82f6\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in text-center md:text-left order-2 md:order-1">
+                    <p class="text-accent font-semibold text-lg mb-4 tracking-wider uppercase">Welcome to my portfolio</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Hi, I'm <span class="gradient-text">Sourav Choudhary</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 mb-8">
+                        SAP BTP Consultant & Full Stack Developer specializing in 
+                        <span class="text-white font-semibold">SAP UI5</span>, 
+                        <span class="text-white font-semibold">CAPM</span>, and 
+                        <span class="text-white font-semibold">Generative AI</span>
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center mb-8">
+                        <a href="#experience" class="bg-accent hover:bg-accentHover text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border-2 border-gray-600 hover:border-white text-gray-300 hover:text-white px-8 py-4 rounded-full font-semibold transition-all">
+                            Get In Touch
+                        </a>
+                    </div>
+                    <div class="flex justify-center md:justify-start space-x-6 text-2xl text-gray-400">
+                        <a href="https://linkedin.com/in/sourav-choudhary-b22366171" target="_blank" class="hover:text-white transition-colors transform hover:scale-110"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:ssc9314313552@gmail.com" class="hover:text-white transition-colors transform hover:scale-110"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:9142997990" class="hover:text-white transition-colors transform hover:scale-110"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-accent/20 rounded-full blur-3xl"></div>
+                        <img src="/mnt/kimi/upload/DSC_6270s (1).jpg" alt="Sourav Choudhary" class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full profile-image animate-fade-in">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
+            <i class="fas fa-chevron-down text-2xl text-gray-500"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-secondary relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center md:hidden lg:flex">
+                    <img src="/mnt/kimi/upload/DSC_6270s (1).jpg" alt="Sourav Choudhary" class="w-full max-w-md rounded-2xl shadow-2xl border border-gray-700">
+                </div>
+                <div class="animate-slide-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+                    <div class="w-20 h-1 bg-accent mb-6"></div>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        SAP BTP Consultant with <span class="text-white font-semibold">3.5+ years</span> of strong hands-on experience in SAP UI5, SAP Fiori, Cloud Application Programming Model (CAPM), and SAP Build Process Automation (SBPA).
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        Currently working at <span class="text-accent font-semibold">Infosys Limited</span>, specializing in end-to-end full stack application development on SAP BTP, with proven expertise in designing scalable UI5 applications, CAPM-based backend services, and workflow-driven business solutions integrated with SAP S/4HANA and HANA Cloud.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Passionate about building clean, performant enterprise solutions while continuously expanding expertise in SAP Generative AI, including SAP Joule and SAP AI Core for AI-assisted features and intelligent automation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto">Comprehensive expertise across the SAP ecosystem and modern web technologies</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="glass-card rounded-2xl p-8 hover:border-accent transition-colors">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-laptop-code text-2xl text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Frontend Development</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">SAP UI5</span>
+                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">SAP Fiori</span>
+                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">Fiori Elements</span>
+                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">HTML5/CSS3</span>
+                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">JavaScript</span>
+                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">XML/JSON</span>
+                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">Bootstrap</span>
+                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">Responsive Design</span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="glass-card rounded-2xl p-8 hover:border-purple-500 transition-colors">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-server text-2xl text-purple-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Backend & Integration</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">CAPM</span>
+                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">Node.js</span>
+                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">OData V4</span>
+                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">RESTful APIs</span>
+                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">SAP Gateway</span>
+                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">SAP S/4HANA</span>
+                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">CDS</span>
+                    </div>
+                </div>
+
+                <!-- SAP BTP -->
+                <div class="glass-card rounded-2xl p-8 hover:border-green-500 transition-colors">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-cloud text-2xl text-green-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">SAP BTP & Cloud</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20">SAP BTP</span>
+                        <span class="skill-tag bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20">Cloud Foundry</span>
+                        <span class="skill-tag bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20">HANA Cloud</span>
+                        <span class="skill-tag bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20">SAP Workflow</span>
+                        <span class="skill-tag bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20">SBPA</span>
+                        <span class="skill-tag bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20">Cloud Connector</span>
+                    </div>
+                </div>
+
+                <!-- Generative AI -->
+                <div class="glass-card rounded-2xl p-8 hover:border-yellow-500 transition-colors md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-brain text-2xl text-yellow-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Generative AI</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/20">SAP Joule</span>
+                        <span class="skill-tag bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/20">SAP AI Core</span>
+                        <span class="skill-tag bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/20">GenAI Integration</span>
+                        <span class="skill-tag bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/20">AI Orchestration</span>
+                        <span class="skill-tag bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/20">Prompt Engineering</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="glass-card rounded-2xl p-8 hover:border-pink-500 transition-colors md:col-span-2 lg:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-tools text-2xl text-pink-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Development Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">SAP BAS</span>
+                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">SAP Web IDE</span>
+                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">Git</span>
+                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">Bitbucket</span>
+                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">UI Theme Designer</span>
+                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">Fiori Tools</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-secondary relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary/50 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Professional Experience</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-gray-400">Digital Specialist Engineer at Infosys Limited</p>
+                <p class="text-accent font-semibold mt-2">July 2022 - Present</p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- PIR Project -->
+                <div class="project-card bg-primary rounded-2xl p-8 border border-gray-800">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-2xl font-bold text-white">Purchase Info Record (PIR) Solution</h3>
+                                <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/30">Infosys Limited</span>
+                            </div>
+                            <p class="text-gray-400">End-to-End Full Stack Development</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 text-right">
+                            <span class="text-accent font-semibold">Jul 2022 - Present</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Led end-to-end development from concept to deployment using SAP UI5 and CAPM</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Designed responsive UI for efficient purchase records management</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Developed robust CAPM backend for business logic and data modeling</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Automated approval workflows, reducing manual intervention by <span class="text-white font-semibold">25%</span></span>
+                            </li>
+                        </ul>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Enhanced standard functionality with custom fields for procurement requirements</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Integrated SAP Generative AI capabilities (Joule & AI Core)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Increased procurement efficiency by <span class="text-white font-semibold">15%</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Reduced processing time by <span class="text-white font-semibold">20%</span></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP UI5</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">CAPM</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP BTP</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP Joule</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">AI Core</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP Workflow</span>
+                    </div>
+                </div>
+
+                <!-- CAPEX Project -->
+                <div class="project-card bg-primary rounded-2xl p-8 border border-gray-800">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-2xl font-bold text-white">CAPEX Management Solution</h3>
+                                <span class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/30">Infosys Limited</span>
+                            </div>
+                            <p class="text-gray-400">Full-stack CAPEX Lifecycle Management</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 text-right">
+                            <span class="text-accent font-semibold">2023 - Present</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <p class="text-gray-300 mb-4">Designed and developed comprehensive CAPEX Management solution covering entire lifecycle from creation to approval using SAP UI5, SAP Joule, CAPM, and SBPA.</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-secondary/50 p-4 rounded-lg border border-gray-700">
+                                <h4 class="font-semibold text-white mb-2"><i class="fas fa-file-alt text-accent mr-2"></i>CAPEX Request Creation/Change</h4>
+                                <p class="text-sm text-gray-400">Multi-level WBS data, validations, submission logic with dynamic field enablement and simulated workflow preview</p>
+                            </div>
+                            <div class="bg-secondary/50 p-4 rounded-lg border border-gray-700">
+                                <h4 class="font-semibold text-white mb-2"><i class="fas fa-chart-dashboard text-accent mr-2"></i>CAPEX Request Dashboard</h4>
+                                <p class="text-sm text-gray-400">Central dashboard with real-time status, simulated approval chains, and role-based actions</p>
+                            </div>
+                            <div class="bg-secondary/50 p-4 rounded-lg border border-gray-700">
+                                <h4 class="font-semibold text-white mb-2"><i class="fas fa-cogs text-accent mr-2"></i>Function & Sub Function</h4>
+                                <p class="text-sm text-gray-400">CRUD-enabled apps with validations, auto-ID generation, and value helps integrated with Company Code services</p>
+                            </div>
+                            <div class="bg-secondary/50 p-4 rounded-lg border border-gray-700">
+                                <h4 class="font-semibold text-white mb-2"><i class="fas fa-sitemap text-accent mr-2"></i>Workflow Template & Groups</h4>
+                                <p class="text-sm text-gray-400">Admin interface for workflow determination logic and approval group management</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP UI5</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SBPA</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">CAPM</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">OData V4</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">CDS</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP HANA Cloud</span>
+                    </div>
+                </div>
+
+                <!-- Fiori Implementation -->
+                <div class="project-card bg-primary rounded-2xl p-8 border border-gray-800">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-2xl font-bold text-white">SAP Fiori Implementation</h3>
+                                <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/30">Infosys Limited</span>
+                            </div>
+                            <p class="text-gray-400">Fiori Activation & Customization</p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-gray-300 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Activated SAP Fiori applications and OData services for OTC, R2R, MDG, and EAM modules</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Designed custom catalogs and Fiori app configurations in launchpad</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Extended Fiori elements (worklist, list report, overview pages) for enhanced UX</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Customized Journal Entry application UI and backend logic</span>
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP Fiori</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP S/4HANA 2022</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">Fiori Launchpad</span>
+                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">OData</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-20 bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Certifications</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-accent transition-all group">
+                    <div class="flex items-start justify-between mb-4">
+                        <i class="fas fa-certificate text-3xl text-accent group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">SAP</span>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">SAP Certified Associate</h3>
+                    <p class="text-gray-400 text-sm">SAP Fiori Application Developer</p>
+                    <p class="text-gray-500 text-xs mt-2">UI5 Framework, JavaScript, XML, MVC</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-purple-500 transition-all group">
+                    <div class="flex items-start justify-between mb-4">
+                        <i class="fas fa-certificate text-3xl text-purple-500 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">SAP</span>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">SAP Certified Associate</h3>
+                    <p class="text-gray-400 text-sm">Low-Code/No-Code Developer</p>
+                    <p class="text-gray-500 text-xs mt-2">SAP Build</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-yellow-500 transition-all group">
+                    <div class="flex items-start justify-between mb-4">
+                        <i class="fas fa-certificate text-3xl text-yellow-500 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">SAP</span>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">SAP Certified Associate</h3>
+                    <p class="text-gray-400 text-sm">SAP Generative AI Developer</p>
+                    <p class="text-gray-500 text-xs mt-2">AI Core, Joule Integration</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-green-500 transition-all group">
+                    <div class="flex items-start justify-between mb-4">
+                        <i class="fas fa-award text-3xl text-green-500 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">Infosys</span>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Infosys Certified</h3>
+                    <p class="text-gray-400 text-sm">SAP FIORI Consultant</p>
+                    <p class="text-gray-500 text-xs mt-2">SAP UI5, OData, ABAP Integration</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-blue-500 transition-all group">
+                    <div class="flex items-start justify-between mb-4">
+                        <i class="fas fa-award text-3xl text-blue-500 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">Infosys</span>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Infosys Certified</h3>
+                    <p class="text-gray-400 text-sm">Spring Microservices Developer</p>
+                    <p class="text-gray-500 text-xs mt-2">Java, Spring Boot, Microservices</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-red-500 transition-all group">
+                    <div class="flex items-start justify-between mb-4">
+                        <i class="fas fa-award text-3xl text-red-500 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">Infosys</span>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Infosys Certified</h3>
+                    <p class="text-gray-400 text-sm">Angular Professional</p>
+                    <p class="text-gray-500 text-xs mt-2">Angular Framework, TypeScript</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-20 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-2xl p-8 md:p-12 border border-gray-800 max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-24 h-24 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-graduation-cap text-4xl text-accent"></i>
+                    </div>
+                    <div class="text-center md:text-left flex-1">
+                        <h3 class="text-2xl font-bold text-white mb-2">Bachelor of Technology</h3>
+                        <p class="text-xl text-gray-300 mb-2">Electronics and Communication Engineering</p>
+                        <p class="text-accent font-semibold mb-2">Chandigarh Engineering College, Landran</p>
+                        <p class="text-gray-500">April 2018 - June 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
+            <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+            <p class="text-gray-400 mb-12 text-lg">Open to opportunities in SAP BTP, Full Stack Development, and Generative AI projects</p>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <a href="mailto:ssc9314313552@gmail.com" class="glass-card p-6 rounded-xl hover:border-accent transition-all group">
+                    <i class="fas fa-envelope text-3xl text-accent mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-semibold text-white mb-2">Email</h3>
+                    <p class="text-gray-400 text-sm">ssc9314313552@gmail.com</p>
+                </a>
+                <a href="tel:9142997990" class="glass-card p-6 rounded-xl hover:border-accent transition-all group">
+                    <i class="fas fa-phone text-3xl text-accent mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-semibold text-white mb-2">Phone</h3>
+                    <p class="text-gray-400 text-sm">+91 9142997990</p>
+                </a>
+                <a href="https://linkedin.com/in/sourav-choudhary-b22366171" target="_blank" class="glass-card p-6 rounded-xl hover:border-accent transition-all group">
+                    <i class="fab fa-linkedin text-3xl text-accent mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-semibold text-white mb-2">LinkedIn</h3>
+                    <p class="text-gray-400 text-sm">Connect with me</p>
+                </a>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl border border-gray-800">
+                <form onsubmit="event.preventDefault(); alert('Thank you for your message! I will get back to you soon.');" class="space-y-6 text-left">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                            <input type="text" class="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                            <input type="email" class="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Subject</label>
+                        <input type="text" class="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="Project Inquiry" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                        <textarea rows="4" class="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-accent hover:bg-accentHover text-white font-semibold py-4 rounded-lg transition-all transform hover:scale-[1.02] shadow-lg shadow-blue-500/25">
+                        Send Message <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary border-t border-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="text-2xl font-bold gradient-text">SC.</span>
+                <span class="text-gray-500 ml-2">© 2024 Sourav Choudhary. All rights reserved.</span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://linkedin.com/in/sourav-choudhary-b22366171" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="mailto:ssc9314313552@gmail.com" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+                <a href="tel:9142997990" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-phone text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.add('bg-primary/95');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.remove('bg-primary/95');
+                navbar.classList.add('bg-primary/80');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.glass-card, .project-card').forEach((el) => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
