@@ -86,6 +86,11 @@
             border: 4px solid rgba(59, 130, 246, 0.3);
             box-shadow: 0 20px 40px -5px rgba(59, 130, 246, 0.3);
         }
+        .text-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
 <body class="bg-primary text-gray-100 font-sans antialiased selection:bg-accent selection:text-white">
@@ -103,7 +108,6 @@
                         <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">About</a>
                         <a href="#skills" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Skills</a>
                         <a href="#experience" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Experience</a>
-                        <a href="#projects" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Projects</a>
                         <a href="#contact" class="bg-accent hover:bg-accentHover text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">Contact</a>
                     </div>
                 </div>
@@ -114,7 +118,6 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-secondary border-b border-gray-700">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#home" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Home</a>
@@ -134,19 +137,21 @@
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="animate-fade-in text-center md:text-left order-2 md:order-1">
-                    <p class="text-accent font-semibold text-lg mb-4 tracking-wider uppercase">Welcome to my portfolio</p>
+                    <div class="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-accent text-sm font-semibold mb-6">
+                        <i class="fas fa-circle text-xs mr-2 animate-pulse"></i> Available for Opportunities
+                    </div>
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                         Hi, I'm <span class="gradient-text">Sourav Choudhary</span>
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-400 mb-8">
-                        SAP BTP Consultant & Full Stack Developer specializing in 
-                        <span class="text-white font-semibold">SAP UI5</span>, 
-                        <span class="text-white font-semibold">CAPM</span>, and 
-                        <span class="text-white font-semibold">Generative AI</span>
+                    <h2 class="text-xl md:text-2xl text-gray-300 mb-6 font-light">
+                        SAP BTP Consultant & Enterprise Full Stack Developer
+                    </h2>
+                    <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+                        I architect and build <span class="text-white font-semibold">enterprise-grade solutions</span> that bridge the gap between complex business processes and modern user experiences. Specializing in end-to-end SAP BTP development, I transform procurement and financial workflows into intelligent, automated systems powered by <span class="text-gradient font-semibold">Generative AI</span> and cloud-native technologies.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center mb-8">
                         <a href="#experience" class="bg-accent hover:bg-accentHover text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30">
-                            View My Work
+                            View My Projects
                         </a>
                         <a href="#contact" class="border-2 border-gray-600 hover:border-white text-gray-300 hover:text-white px-8 py-4 rounded-full font-semibold transition-all">
                             Get In Touch
@@ -161,8 +166,14 @@
                 
                 <div class="order-1 md:order-2 flex justify-center">
                     <div class="relative">
-                        <div class="absolute inset-0 bg-accent/20 rounded-full blur-3xl"></div>
+                        <div class="absolute inset-0 bg-accent/20 rounded-full blur-3xl animate-pulse"></div>
                         <img src="profile.jpg" alt="Sourav Choudhary" class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full profile-image animate-fade-in">
+                        <div class="absolute -bottom-4 -right-4 bg-secondary border border-gray-700 rounded-2xl p-4 shadow-xl">
+                            <div class="flex items-center gap-3">
+                                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                                <span class="text-sm font-semibold text-white">3.5+ Years Exp.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -183,15 +194,35 @@
                 <div class="animate-slide-up">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
                     <div class="w-20 h-1 bg-accent mb-6"></div>
-                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
-                        SAP BTP Consultant with <span class="text-white font-semibold">3.5+ years</span> of strong hands-on experience in SAP UI5, SAP Fiori, Cloud Application Programming Model (CAPM), and SAP Build Process Automation (SBPA).
-                    </p>
-                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
-                        Currently working at <span class="text-accent font-semibold">Infosys Limited</span>, specializing in end-to-end full stack application development on SAP BTP, with proven expertise in designing scalable UI5 applications, CAPM-based backend services, and workflow-driven business solutions integrated with SAP S/4HANA and HANA Cloud.
-                    </p>
-                    <p class="text-gray-300 text-lg leading-relaxed">
-                        Passionate about building clean, performant enterprise solutions while continuously expanding expertise in SAP Generative AI, including SAP Joule and SAP AI Core for AI-assisted features and intelligent automation.
-                    </p>
+                    
+                    <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
+                        <p>
+                            I'm a <span class="text-white font-semibold">Digital Specialist Engineer at Infosys Limited</span> with a passion for building enterprise solutions that make a real business impact. Over the past 3.5+ years, I've evolved from a traditional ABAP developer into a full-stack SAP BTP specialist, architecting cloud-native applications that modernize how enterprises handle procurement and financial operations.
+                        </p>
+                        
+                        <p>
+                            My expertise lies in the <span class="text-accent font-semibold">SAP Business Technology Platform (BTP)</span> ecosystem, where I combine the power of <span class="text-white">SAP UI5/Fiori</span> for intuitive frontend experiences with <span class="text-white">Cloud Application Programming Model (CAPM)</span> for robust, scalable backends. I don't just write code—I engineer complete digital transformation solutions.
+                        </p>
+
+                        <p>
+                            What sets me apart is my early adoption of <span class="text-gradient font-semibold">Generative AI technologies</span> within the SAP landscape. I'm among the few developers integrating <span class="text-white">SAP Joule</span> and <span class="text-white">SAP AI Core</span> into enterprise workflows, creating intelligent automation that reduces manual effort by up to 25% while enhancing decision-making capabilities.
+                        </p>
+
+                        <p>
+                            Whether it's automating complex approval workflows, building real-time dashboards for capital expenditure management, or extending SAP S/4HANA capabilities with custom Fiori applications, I bring a holistic approach that considers both technical excellence and business value.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="border-l-4 border-accent pl-4">
+                            <h4 class="text-white font-bold text-2xl">15-25%</h4>
+                            <p class="text-gray-400 text-sm">Efficiency Improvement Delivered</p>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="text-white font-bold text-2xl">End-to-End</h4>
+                            <p class="text-gray-400 text-sm">Full Stack Architecture</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -201,58 +232,51 @@
     <section id="skills" class="py-20 bg-primary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Arsenal</h2>
                 <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
-                <p class="text-gray-400 max-w-2xl mx-auto">Comprehensive expertise across the SAP ecosystem and modern web technologies</p>
+                <p class="text-gray-400 max-w-2xl mx-auto">Comprehensive expertise spanning frontend, backend, cloud infrastructure, and cutting-edge AI integration</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Frontend -->
-                <div class="glass-card rounded-2xl p-8 hover:border-accent transition-colors">
+                <div class="glass-card rounded-2xl p-8 hover:border-accent transition-colors group">
                     <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                             <i class="fas fa-laptop-code text-2xl text-blue-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white">Frontend Development</h3>
+                        <h3 class="text-xl font-bold text-white">Frontend Mastery</h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">SAP UI5</span>
                         <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">SAP Fiori</span>
                         <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">Fiori Elements</span>
-                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">HTML5/CSS3</span>
-                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">JavaScript</span>
-                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">XML/JSON</span>
-                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">Bootstrap</span>
                         <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">Responsive Design</span>
+                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">JavaScript/ES6+</span>
+                        <span class="skill-tag bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/20">XML Views</span>
                     </div>
                 </div>
 
-                <!-- Backend -->
-                <div class="glass-card rounded-2xl p-8 hover:border-purple-500 transition-colors">
+                <div class="glass-card rounded-2xl p-8 hover:border-purple-500 transition-colors group">
                     <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                             <i class="fas fa-server text-2xl text-purple-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white">Backend & Integration</h3>
+                        <h3 class="text-xl font-bold text-white">Backend & Data</h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">CAPM</span>
-                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">Node.js</span>
+                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">CAPM (Node.js)</span>
                         <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">OData V4</span>
-                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">RESTful APIs</span>
-                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">SAP Gateway</span>
+                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">CDS Modeling</span>
                         <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">SAP S/4HANA</span>
-                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">CDS</span>
+                        <span class="skill-tag bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/20">REST APIs</span>
                     </div>
                 </div>
 
-                <!-- SAP BTP -->
-                <div class="glass-card rounded-2xl p-8 hover:border-green-500 transition-colors">
+                <div class="glass-card rounded-2xl p-8 hover:border-green-500 transition-colors group">
                     <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                             <i class="fas fa-cloud text-2xl text-green-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white">SAP BTP & Cloud</h3>
+                        <h3 class="text-xl font-bold text-white">Cloud & Automation</h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="skill-tag bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20">SAP BTP</span>
@@ -260,14 +284,12 @@
                         <span class="skill-tag bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20">HANA Cloud</span>
                         <span class="skill-tag bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20">SAP Workflow</span>
                         <span class="skill-tag bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20">SBPA</span>
-                        <span class="skill-tag bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20">Cloud Connector</span>
                     </div>
                 </div>
 
-                <!-- Generative AI -->
-                <div class="glass-card rounded-2xl p-8 hover:border-yellow-500 transition-colors md:col-span-2 lg:col-span-1">
+                <div class="glass-card rounded-2xl p-8 hover:border-yellow-500 transition-colors md:col-span-2 lg:col-span-1 group">
                     <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                             <i class="fas fa-brain text-2xl text-yellow-500"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white">Generative AI</h3>
@@ -275,193 +297,250 @@
                     <div class="flex flex-wrap gap-2">
                         <span class="skill-tag bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/20">SAP Joule</span>
                         <span class="skill-tag bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/20">SAP AI Core</span>
-                        <span class="skill-tag bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/20">GenAI Integration</span>
                         <span class="skill-tag bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/20">AI Orchestration</span>
                         <span class="skill-tag bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/20">Prompt Engineering</span>
                     </div>
                 </div>
 
-                <!-- Tools -->
-                <div class="glass-card rounded-2xl p-8 hover:border-pink-500 transition-colors md:col-span-2 lg:col-span-2">
+                <div class="glass-card rounded-2xl p-8 hover:border-pink-500 transition-colors md:col-span-2 lg:col-span-2 group">
                     <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                             <i class="fas fa-tools text-2xl text-pink-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white">Development Tools</h3>
+                        <h3 class="text-xl font-bold text-white">Development Ecosystem</h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">SAP BAS</span>
-                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">SAP Web IDE</span>
-                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">Git</span>
-                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">Bitbucket</span>
-                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">UI Theme Designer</span>
+                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">Git/Bitbucket</span>
                         <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">Fiori Tools</span>
+                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">UI Theme Designer</span>
+                        <span class="skill-tag bg-pink-500/10 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/20">Cloud Connector</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience Section - MERGED PROJECTS -->
     <section id="experience" class="py-20 bg-secondary relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary/50 to-transparent"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Professional Experience</h2>
                 <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
-                <p class="text-gray-400">Digital Specialist Engineer at Infosys Limited</p>
+                <p class="text-gray-400 text-lg">Digital Specialist Engineer at <span class="text-white font-semibold">Infosys Limited</span></p>
                 <p class="text-accent font-semibold mt-2">July 2022 - Present</p>
             </div>
 
-            <div class="space-y-12">
-                <!-- PIR Project -->
-                <div class="project-card bg-primary rounded-2xl p-8 border border-gray-800">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                        <div>
-                            <div class="flex items-center gap-3 mb-2">
-                                <h3 class="text-2xl font-bold text-white">Purchase Info Record (PIR) Solution</h3>
-                                <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/30">Infosys Limited</span>
-                            </div>
-                            <p class="text-gray-400">End-to-End Full Stack Development</p>
-                        </div>
-                        <div class="mt-4 md:mt-0 text-right">
-                            <span class="text-accent font-semibold">Jul 2022 - Present</span>
-                        </div>
+            <!-- Main Project Container -->
+            <div class="project-card bg-primary rounded-3xl p-8 md:p-12 border border-gray-800 shadow-2xl">
+                <div class="mb-8 pb-8 border-b border-gray-800">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-0">Enterprise Procurement & Financial Solutions</h3>
+                        <span class="bg-blue-500/20 text-blue-400 px-4 py-2 rounded-full text-sm font-semibold border border-blue-500/30">
+                            SAP BTP End-to-End Development
+                        </span>
                     </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <ul class="space-y-3 text-gray-300">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
-                                <span>Led end-to-end development from concept to deployment using SAP UI5 and CAPM</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
-                                <span>Designed responsive UI for efficient purchase records management</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
-                                <span>Developed robust CAPM backend for business logic and data modeling</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
-                                <span>Automated approval workflows, reducing manual intervention by <span class="text-white font-semibold">25%</span></span>
-                            </li>
-                        </ul>
-                        <ul class="space-y-3 text-gray-300">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
-                                <span>Enhanced standard functionality with custom fields for procurement requirements</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
-                                <span>Integrated SAP Generative AI capabilities (Joule & AI Core)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
-                                <span>Increased procurement efficiency by <span class="text-white font-semibold">15%</span></span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
-                                <span>Reduced processing time by <span class="text-white font-semibold">20%</span></span>
-                            </li>
-                        </ul>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Led the architecture and development of two mission-critical enterprise applications serving 1000+ users across global procurement and finance departments. These integrated solutions digitized legacy manual processes, implemented intelligent workflow automation, and leveraged Generative AI to create a unified business operations platform on SAP BTP.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- PIR Solution Detail -->
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                                <i class="fas fa-shopping-cart text-2xl text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-white">Purchase Info Record (PIR)</h4>
+                                <p class="text-accent text-sm">Procurement Management System</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-secondary/50 rounded-xl p-6 border border-gray-700">
+                            <h5 class="text-white font-semibold mb-3 flex items-center">
+                                <i class="fas fa-bullseye text-accent mr-2"></i> Business Challenge
+                            </h5>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                                The client faced significant delays in procurement operations due to manual purchase record management, disconnected approval hierarchies, and lack of real-time visibility into vendor pricing and material information across multiple company codes.
+                            </p>
+                            
+                            <h5 class="text-white font-semibold mb-3 flex items-center">
+                                <i class="fas fa-lightbulb text-yellow-500 mr-2"></i> Solution Architecture
+                            </h5>
+                            <ul class="space-y-2 text-gray-400 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-2 text-xs"></i>
+                                    <span>Built responsive <strong class="text-white">SAP UI5</strong> interface with dynamic forms handling complex procurement data validations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-2 text-xs"></i>
+                                    <span>Developed <strong class="text-white">CAPM</strong> backend with OData V4 services for real-time data synchronization with SAP S/4HANA</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-2 text-xs"></i>
+                                    <span>Implemented automated approval workflows using <strong class="text-white">SAP Workflow</strong> and <strong class="text-white">SBPA</strong>, reducing manual routing by 25%</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-accent mt-1 mr-2 text-xs"></i>
+                                    <span>Integrated <strong class="text-white">SAP Joule</strong> AI assistant for intelligent data retrieval and natural language query processing</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex items-center gap-4 text-sm">
+                            <span class="bg-green-500/10 text-green-400 px-3 py-1 rounded-lg border border-green-500/20">
+                                <i class="fas fa-arrow-up mr-1"></i> 15% Efficiency Gain
+                            </span>
+                            <span class="bg-green-500/10 text-green-400 px-3 py-1 rounded-lg border border-green-500/20">
+                                <i class="fas fa-clock mr-1"></i> 20% Faster Processing
+                            </span>
+                        </div>
                     </div>
 
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP UI5</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">CAPM</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP BTP</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP Joule</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">AI Core</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP Workflow</span>
+                    <!-- CAPEX Solution Detail -->
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center">
+                                <i class="fas fa-chart-line text-2xl text-purple-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-white">CAPEX Management Suite</h4>
+                                <p class="text-purple-400 text-sm">Capital Expenditure Lifecycle Platform</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-secondary/50 rounded-xl p-6 border border-gray-700">
+                            <h5 class="text-white font-semibold mb-3 flex items-center">
+                                <i class="fas fa-bullseye text-accent mr-2"></i> Business Challenge
+                            </h5>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                                Capital expenditure requests were managed through fragmented Excel sheets and email chains, causing budget overruns, delayed approvals, and lack of audit trails for multi-million dollar investment decisions requiring multi-level WBS (Work Breakdown Structure) validation.
+                            </p>
+                            
+                            <h5 class="text-white font-semibold mb-3 flex items-center">
+                                <i class="fas fa-cogs text-purple-500 mr-2"></i> Comprehensive Solution
+                            </h5>
+                            
+                            <div class="space-y-3 mb-4">
+                                <div class="bg-primary/50 p-3 rounded-lg border border-gray-700">
+                                    <h6 class="text-white text-sm font-semibold mb-1">Request Management App</h6>
+                                    <p class="text-gray-500 text-xs">Multi-level WBS data entry with dynamic field enablement, real-time budget validation, and simulated workflow preview capabilities.</p>
+                                </div>
+                                <div class="bg-primary/50 p-3 rounded-lg border border-gray-700">
+                                    <h6 class="text-white text-sm font-semibold mb-1">Executive Dashboard</h6>
+                                    <p class="text-gray-500 text-xs">Real-time analytics with smart filters, approval chain visualization, and role-based action buttons (Approve/Reject/Withdraw).</p>
+                                </div>
+                                <div class="bg-primary/50 p-3 rounded-lg border border-gray-700">
+                                    <h6 class="text-white text-sm font-semibold mb-1">Admin Configuration Portal</h6>
+                                    <p class="text-gray-500 text-xs">Dynamic workflow template builder with Function/Sub-Function mapping and approval group management.</p>
+                                </div>
+                            </div>
+
+                            <ul class="space-y-2 text-gray-400 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-purple-500 mt-1 mr-2 text-xs"></i>
+                                    <span>Full-stack development using <strong class="text-white">SAP UI5 + CAPM + SBPA</strong> integration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-purple-500 mt-1 mr-2 text-xs"></i>
+                                    <span>Complex approval matrix automation with escalation logic and email notifications</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-purple-500 mt-1 mr-2 text-xs"></i>
+                                    <span>Generative AI integration for automated request summarization and risk assessment</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- CAPEX Project -->
-                <div class="project-card bg-primary rounded-2xl p-8 border border-gray-800">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                        <div>
-                            <div class="flex items-center gap-3 mb-2">
-                                <h3 class="text-2xl font-bold text-white">CAPEX Management Solution</h3>
-                                <span class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/30">Infosys Limited</span>
-                            </div>
-                            <p class="text-gray-400">Full-stack CAPEX Lifecycle Management</p>
-                        </div>
-                        <div class="mt-4 md:mt-0 text-right">
-                            <span class="text-accent font-semibold">2023 - Present</span>
-                        </div>
-                    </div>
-
-                    <div class="mb-6">
-                        <p class="text-gray-300 mb-4">Designed and developed comprehensive CAPEX Management solution covering entire lifecycle from creation to approval using SAP UI5, SAP Joule, CAPM, and SBPA.</p>
-                        
-                        <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <div class="bg-secondary/50 p-4 rounded-lg border border-gray-700">
-                                <h4 class="font-semibold text-white mb-2"><i class="fas fa-file-alt text-accent mr-2"></i>CAPEX Request Creation/Change</h4>
-                                <p class="text-sm text-gray-400">Multi-level WBS data, validations, submission logic with dynamic field enablement and simulated workflow preview</p>
-                            </div>
-                            <div class="bg-secondary/50 p-4 rounded-lg border border-gray-700">
-                                <h4 class="font-semibold text-white mb-2"><i class="fas fa-chart-dashboard text-accent mr-2"></i>CAPEX Request Dashboard</h4>
-                                <p class="text-sm text-gray-400">Central dashboard with real-time status, simulated approval chains, and role-based actions</p>
-                            </div>
-                            <div class="bg-secondary/50 p-4 rounded-lg border border-gray-700">
-                                <h4 class="font-semibold text-white mb-2"><i class="fas fa-cogs text-accent mr-2"></i>Function & Sub Function</h4>
-                                <p class="text-sm text-gray-400">CRUD-enabled apps with validations, auto-ID generation, and value helps integrated with Company Code services</p>
-                            </div>
-                            <div class="bg-secondary/50 p-4 rounded-lg border border-gray-700">
-                                <h4 class="font-semibold text-white mb-2"><i class="fas fa-sitemap text-accent mr-2"></i>Workflow Template & Groups</h4>
-                                <p class="text-sm text-gray-400">Admin interface for workflow determination logic and approval group management</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP UI5</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SBPA</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">CAPM</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">OData V4</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">CDS</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP HANA Cloud</span>
+                <!-- Technical Stack -->
+                <div class="mt-10 pt-8 border-t border-gray-800">
+                    <h5 class="text-white font-semibold mb-4">Unified Technology Stack</h5>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-secondary px-4 py-2 rounded-full text-sm text-gray-300 border border-gray-700 flex items-center gap-2">
+                            <i class="fab fa-js text-yellow-500"></i> SAP UI5/JavaScript
+                        </span>
+                        <span class="bg-secondary px-4 py-2 rounded-full text-sm text-gray-300 border border-gray-700 flex items-center gap-2">
+                            <i class="fas fa-cloud text-blue-500"></i> SAP CAPM (Node.js)
+                        </span>
+                        <span class="bg-secondary px-4 py-2 rounded-full text-sm text-gray-300 border border-gray-700 flex items-center gap-2">
+                            <i class="fas fa-database text-green-500"></i> SAP HANA Cloud
+                        </span>
+                        <span class="bg-secondary px-4 py-2 rounded-full text-sm text-gray-300 border border-gray-700 flex items-center gap-2">
+                            <i class="fas fa-robot text-purple-500"></i> SAP AI Core & Joule
+                        </span>
+                        <span class="bg-secondary px-4 py-2 rounded-full text-sm text-gray-300 border border-gray-700 flex items-center gap-2">
+                            <i class="fas fa-project-diagram text-pink-500"></i> SAP Workflow/SBPA
+                        </span>
+                        <span class="bg-secondary px-4 py-2 rounded-full text-sm text-gray-300 border border-gray-700 flex items-center gap-2">
+                            <i class="fas fa-plug text-orange-500"></i> OData V4/S/4HANA
+                        </span>
                     </div>
                 </div>
 
-                <!-- Fiori Implementation -->
-                <div class="project-card bg-primary rounded-2xl p-8 border border-gray-800">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                        <div>
-                            <div class="flex items-center gap-3 mb-2">
-                                <h3 class="text-2xl font-bold text-white">SAP Fiori Implementation</h3>
-                                <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/30">Infosys Limited</span>
-                            </div>
-                            <p class="text-gray-400">Fiori Activation & Customization</p>
-                        </div>
+                <!-- Impact Metrics -->
+                <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-secondary/30 rounded-xl p-4 text-center border border-gray-800">
+                        <div class="text-3xl font-bold text-accent mb-1">1000+</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider">Active Users</div>
                     </div>
+                    <div class="bg-secondary/30 rounded-xl p-4 text-center border border-gray-800">
+                        <div class="text-3xl font-bold text-purple-500 mb-1">25%</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider">Manual Work Reduced</div>
+                    </div>
+                    <div class="bg-secondary/30 rounded-xl p-4 text-center border border-gray-800">
+                        <div class="text-3xl font-bold text-green-500 mb-1">20%</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider">Processing Time Saved</div>
+                    </div>
+                    <div class="bg-secondary/30 rounded-xl p-4 text-center border border-gray-800">
+                        <div class="text-3xl font-bold text-yellow-500 mb-1">GenAI</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider">AI Features Integrated</div>
+                    </div>
+                </div>
+            </div>
 
-                    <ul class="space-y-3 text-gray-300 mb-6">
+            <!-- Additional Context -->
+            <div class="mt-12 grid md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-2xl p-6 border border-gray-800">
+                    <h4 class="text-xl font-bold text-white mb-3 flex items-center">
+                        <i class="fas fa-rocket text-accent mr-3"></i>
+                        SAP Fiori Implementation & Extension
+                    </h4>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Beyond custom development, activated and extended standard SAP Fiori applications for Global Foundries, enabling S/4HANA 2022 greenfield implementation across OTC, R2R, MDG, and EAM modules.
+                    </p>
+                    <ul class="space-y-2 text-gray-400 text-sm">
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
-                            <span>Activated SAP Fiori applications and OData services for OTC, R2R, MDG, and EAM modules</span>
+                            <i class="fas fa-chevron-right text-accent mt-1 mr-2 text-xs"></i>
+                            <span>Customized Journal Entry apps with enhanced UI logic</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
-                            <span>Designed custom catalogs and Fiori app configurations in launchpad</span>
+                            <i class="fas fa-chevron-right text-accent mt-1 mr-2 text-xs"></i>
+                            <span>Designed Fiori Launchpad spaces and custom catalogs</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
-                            <span>Extended Fiori elements (worklist, list report, overview pages) for enhanced UX</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-accent mt-1 mr-3 flex-shrink-0"></i>
-                            <span>Customized Journal Entry application UI and backend logic</span>
+                            <i class="fas fa-chevron-right text-accent mt-1 mr-2 text-xs"></i>
+                            <span>Extended Worklist and List Report patterns</span>
                         </li>
                     </ul>
+                </div>
 
+                <div class="glass-card rounded-2xl p-6 border border-gray-800">
+                    <h4 class="text-xl font-bold text-white mb-3 flex items-center">
+                        <i class="fas fa-graduation-cap text-purple-500 mr-3"></i>
+                        Continuous Learning & Innovation
+                    </h4>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Committed to staying at the forefront of SAP technology, I've earned 6 professional certifications and actively explore emerging technologies like Generative AI to bring innovative solutions to enterprise challenges.
+                    </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP Fiori</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">SAP S/4HANA 2022</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">Fiori Launchpad</span>
-                        <span class="bg-secondary px-3 py-1 rounded text-sm text-gray-400 border border-gray-700">OData</span>
+                        <span class="text-xs bg-blue-500/10 text-blue-400 px-2 py-1 rounded border border-blue-500/20">SAP Certified Fiori Dev</span>
+                        <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-1 rounded border border-purple-500/20">SAP Certified GenAI Dev</span>
+                        <span class="text-xs bg-green-500/10 text-green-400 px-2 py-1 rounded border border-green-500/20">SAP Build Low-Code</span>
                     </div>
                 </div>
             </div>
@@ -472,69 +551,70 @@
     <section class="py-20 bg-primary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Certifications</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Professional Certifications</h2>
                 <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-gray-400">Validated expertise across SAP and modern development stacks</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-accent transition-all group">
+                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-accent transition-all group hover:transform hover:scale-105">
                     <div class="flex items-start justify-between mb-4">
                         <i class="fas fa-certificate text-3xl text-accent group-hover:scale-110 transition-transform"></i>
                         <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">SAP</span>
                     </div>
-                    <h3 class="font-bold text-white mb-2">SAP Certified Associate</h3>
-                    <p class="text-gray-400 text-sm">SAP Fiori Application Developer</p>
-                    <p class="text-gray-500 text-xs mt-2">UI5 Framework, JavaScript, XML, MVC</p>
+                    <h3 class="font-bold text-white mb-2">SAP Fiori Application Developer</h3>
+                    <p class="text-gray-400 text-sm">Associate Level</p>
+                    <p class="text-gray-500 text-xs mt-2">UI5 Framework, MVC Architecture, JavaScript</p>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-purple-500 transition-all group">
+                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-yellow-500 transition-all group hover:transform hover:scale-105">
                     <div class="flex items-start justify-between mb-4">
-                        <i class="fas fa-certificate text-3xl text-purple-500 group-hover:scale-110 transition-transform"></i>
+                        <i class="fas fa-brain text-3xl text-yellow-500 group-hover:scale-110 transition-transform"></i>
                         <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">SAP</span>
                     </div>
-                    <h3 class="font-bold text-white mb-2">SAP Certified Associate</h3>
-                    <p class="text-gray-400 text-sm">Low-Code/No-Code Developer</p>
-                    <p class="text-gray-500 text-xs mt-2">SAP Build</p>
+                    <h3 class="font-bold text-white mb-2">SAP Generative AI Developer</h3>
+                    <p class="text-gray-400 text-sm">Associate Level</p>
+                    <p class="text-gray-500 text-xs mt-2">AI Core, Joule Integration, Prompt Engineering</p>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-yellow-500 transition-all group">
+                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-purple-500 transition-all group hover:transform hover:scale-105">
                     <div class="flex items-start justify-between mb-4">
-                        <i class="fas fa-certificate text-3xl text-yellow-500 group-hover:scale-110 transition-transform"></i>
+                        <i class="fas fa-code text-3xl text-purple-500 group-hover:scale-110 transition-transform"></i>
                         <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">SAP</span>
                     </div>
-                    <h3 class="font-bold text-white mb-2">SAP Certified Associate</h3>
-                    <p class="text-gray-400 text-sm">SAP Generative AI Developer</p>
-                    <p class="text-gray-500 text-xs mt-2">AI Core, Joule Integration</p>
+                    <h3 class="font-bold text-white mb-2">Low-Code/No-Code Developer</h3>
+                    <p class="text-gray-400 text-sm">Associate Level</p>
+                    <p class="text-gray-500 text-xs mt-2">SAP Build, Process Automation</p>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-green-500 transition-all group">
+                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-green-500 transition-all group hover:transform hover:scale-105">
                     <div class="flex items-start justify-between mb-4">
                         <i class="fas fa-award text-3xl text-green-500 group-hover:scale-110 transition-transform"></i>
                         <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">Infosys</span>
                     </div>
-                    <h3 class="font-bold text-white mb-2">Infosys Certified</h3>
-                    <p class="text-gray-400 text-sm">SAP FIORI Consultant</p>
-                    <p class="text-gray-500 text-xs mt-2">SAP UI5, OData, ABAP Integration</p>
+                    <h3 class="font-bold text-white mb-2">SAP FIORI Consultant</h3>
+                    <p class="text-gray-400 text-sm">Infosys Certified</p>
+                    <p class="text-gray-500 text-xs mt-2">UI5, OData, ABAP Integration</p>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-blue-500 transition-all group">
+                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-blue-500 transition-all group hover:transform hover:scale-105">
                     <div class="flex items-start justify-between mb-4">
-                        <i class="fas fa-award text-3xl text-blue-500 group-hover:scale-110 transition-transform"></i>
+                        <i class="fas fa-leaf text-3xl text-blue-500 group-hover:scale-110 transition-transform"></i>
                         <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">Infosys</span>
                     </div>
-                    <h3 class="font-bold text-white mb-2">Infosys Certified</h3>
-                    <p class="text-gray-400 text-sm">Spring Microservices Developer</p>
-                    <p class="text-gray-500 text-xs mt-2">Java, Spring Boot, Microservices</p>
+                    <h3 class="font-bold text-white mb-2">Spring Microservices</h3>
+                    <p class="text-gray-400 text-sm">Infosys Certified</p>
+                    <p class="text-gray-500 text-xs mt-2">Java, Spring Boot, REST APIs</p>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-red-500 transition-all group">
+                <div class="glass-card p-6 rounded-xl border border-gray-800 hover:border-red-500 transition-all group hover:transform hover:scale-105">
                     <div class="flex items-start justify-between mb-4">
-                        <i class="fas fa-award text-3xl text-red-500 group-hover:scale-110 transition-transform"></i>
+                        <i class="fab fa-angular text-3xl text-red-500 group-hover:scale-110 transition-transform"></i>
                         <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">Infosys</span>
                     </div>
-                    <h3 class="font-bold text-white mb-2">Infosys Certified</h3>
-                    <p class="text-gray-400 text-sm">Angular Professional</p>
-                    <p class="text-gray-500 text-xs mt-2">Angular Framework, TypeScript</p>
+                    <h3 class="font-bold text-white mb-2">Angular Professional</h3>
+                    <p class="text-gray-400 text-sm">Infosys Certified</p>
+                    <p class="text-gray-500 text-xs mt-2">TypeScript, Angular Framework</p>
                 </div>
             </div>
         </div>
@@ -563,9 +643,12 @@
     <section id="contact" class="py-20 bg-primary relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent"></div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Build Something Amazing</h2>
             <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
-            <p class="text-gray-400 mb-12 text-lg">Open to opportunities in SAP BTP, Full Stack Development, and Generative AI projects</p>
+            <p class="text-gray-400 mb-12 text-lg">
+                Open to opportunities in SAP BTP development, Enterprise Architecture, and AI-integrated business solutions. 
+                Whether you need a full-stack developer or a technical architect for your next digital transformation project, let's connect.
+            </p>
 
             <div class="grid md:grid-cols-3 gap-8 mb-12">
                 <a href="mailto:ssc9314313552@gmail.com" class="glass-card p-6 rounded-xl hover:border-accent transition-all group">
@@ -581,7 +664,7 @@
                 <a href="https://linkedin.com/in/sourav-choudhary-b22366171" target="_blank" class="glass-card p-6 rounded-xl hover:border-accent transition-all group">
                     <i class="fab fa-linkedin text-3xl text-accent mb-4 group-hover:scale-110 transition-transform"></i>
                     <h3 class="font-semibold text-white mb-2">LinkedIn</h3>
-                    <p class="text-gray-400 text-sm">Connect with me</p>
+                    <p class="text-gray-400 text-sm">Connect Professionally</p>
                 </a>
             </div>
 
@@ -589,21 +672,21 @@
                 <form onsubmit="event.preventDefault(); alert('Thank you for your message! I will get back to you soon.');" class="space-y-6 text-left">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">Name</label>
-                            <input type="text" class="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="Your Name" required>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Your Name</label>
+                            <input type="text" class="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="John Doe" required>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                            <input type="email" class="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="your@email.com" required>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+                            <input type="email" class="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="john@company.com" required>
                         </div>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-400 mb-2">Subject</label>
-                        <input type="text" class="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="Project Inquiry" required>
+                        <input type="text" class="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="SAP BTP Project Opportunity" required>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                        <textarea rows="4" class="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="Tell me about your project..." required></textarea>
+                        <textarea rows="4" class="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="Tell me about your project requirements..." required></textarea>
                     </div>
                     <button type="submit" class="w-full bg-accent hover:bg-accentHover text-white font-semibold py-4 rounded-lg transition-all transform hover:scale-[1.02] shadow-lg shadow-blue-500/25">
                         Send Message <i class="fas fa-paper-plane ml-2"></i>
@@ -635,13 +718,11 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
 
-        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -654,7 +735,6 @@
             }
         });
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -664,13 +744,11 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    // Close mobile menu if open
                     document.getElementById('mobile-menu').classList.add('hidden');
                 }
             });
         });
 
-        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -685,7 +763,6 @@
             });
         }, observerOptions);
 
-        // Observe elements
         document.querySelectorAll('.glass-card, .project-card').forEach((el) => {
             el.style.opacity = '0';
             observer.observe(el);
